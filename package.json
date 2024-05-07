@@ -5,11 +5,13 @@
 	"type": "module",
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "react-scripts build"
+		"build": "react-scripts build",
+		"eject": "react-scripts eject"
 	},
 	"dependencies": {
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
+		"react-router-dom": "^6.23.0",
 		"react-scripts": "5.0.1",
 		"sass": "^1.77.0"
 	},
