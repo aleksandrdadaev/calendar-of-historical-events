@@ -5,4 +5,11 @@
 	margin: 0 auto;
 
 	padding-top: 170px;
+	padding-bottom: 50px;
+	border-left: 1px rgba(#42567a, 0.1) solid;
+	border-right: 1px rgba(#42567a, 0.1) solid;
+
+	display: flex;
+	flex-direction: column;
+	gap: 176px;
 }
