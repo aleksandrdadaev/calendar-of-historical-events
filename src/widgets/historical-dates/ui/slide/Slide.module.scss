@@ -1,5 +1,5 @@
 .wrapper {
-	width: 100%;
+	width: 320px;
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
@@ -16,4 +16,5 @@
 .text {
 	line-height: 30px;
 	color: #42567a;
+	white-space: pre-line;
 }
