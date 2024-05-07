@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { FC } from 'react'
 import 'swiper/css'
 import { Navigation } from 'swiper/modules'
@@ -10,9 +11,16 @@ import Slide from '../slide/Slide'
 import styles from './InnerSlider.module.scss'
 import InnerSliderButtons from './inner-slider-buttons/InnerSliderButtons'
 
-const InnerSlider: FC<{ events: IHistoricalEvent[] }> = ({ events }) => {
+const InnerSlider: FC<{ events: IHistoricalEvent[]; active: boolean }> = ({
+	events,
+	active,
+}) => {
 	return (
-		<div className={styles.wrapper}>
+		<div
+			className={clsx(styles.wrapper, {
+				[styles.active]: active,
+			})}
+		>
 			<Swiper
 				modules={[Navigation]}
 				slidesPerView={'auto'}
