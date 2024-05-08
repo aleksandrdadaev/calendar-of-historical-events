@@ -7,5 +7,17 @@
 }
 
 .slider {
+	position: static;
 	width: 100%;
+}
+
+.controls {
+	z-index: 2;
+	position: absolute;
+	left: 80px;
+	top: 200px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
