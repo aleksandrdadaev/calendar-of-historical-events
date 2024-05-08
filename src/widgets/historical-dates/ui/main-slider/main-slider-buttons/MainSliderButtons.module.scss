@@ -1,0 +1,37 @@
+.wrapper {
+	width: fit-content;
+	display: flex;
+	gap: 20px;
+}
+
+.button {
+	position: relative;
+	width: 50px;
+	height: 50px;
+
+	border-radius: 50%;
+	border: 1px solid #42567a80;
+
+	transition: all 0.3s ease-in-out;
+	background-color: rgba(#42567a, 0.05);
+
+	&:not(:disabled):hover {
+		background-color: #fff;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
+
+	&.next {
+		transform: rotate(180deg);
+	}
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+}

@@ -13,16 +13,20 @@ import { addZeroToNumber } from '../../lib/utils/add-zero-to-number.util'
 import InnerSlider from '../inner-slider/InnerSlider'
 
 import styles from './MainSlider.module.scss'
+import MainSliderButtons from './main-slider-buttons/MainSliderButtons'
 import MainSliderFraction from './main-slider-fraction/MainSliderFraction'
 
 const MainSlider: FC = () => {
 	const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0)
-	console.log(activeSlideIndex)
+
 	return (
 		<div className={styles.wrapper}>
 			<Swiper
 				modules={[EffectFade, Virtual, Navigation, Pagination]}
-				navigation
+				navigation={{
+					prevEl: `.main-button-prev`,
+					nextEl: `.main-button-next`,
+				}}
 				fadeEffect={{
 					crossFade: true,
 				}}
@@ -54,6 +58,7 @@ const MainSlider: FC = () => {
 				))}
 				<div className={styles.controls}>
 					<MainSliderFraction />
+					<MainSliderButtons />
 				</div>
 			</Swiper>
 		</div>
