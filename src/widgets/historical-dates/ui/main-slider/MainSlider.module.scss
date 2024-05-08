@@ -1,21 +1,25 @@
 .wrapper {
 	position: relative;
 	flex-grow: 1;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
+	gap: 50px;
 }
 
 .slider {
-	position: static;
 	width: 100%;
+
+	> div:first-child {
+		align-items: end;
+	}
 }
 
 .controls {
 	z-index: 2;
-	position: absolute;
-	left: 80px;
-	top: 200px;
+	width: fit-content;
+	padding-left: 80px;
 
 	display: flex;
 	flex-direction: column;

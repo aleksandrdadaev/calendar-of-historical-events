@@ -21,6 +21,10 @@ const MainSlider: FC = () => {
 
 	return (
 		<div className={styles.wrapper}>
+			<div className={styles.controls}>
+				<MainSliderFraction />
+				<MainSliderButtons />
+			</div>
 			<Swiper
 				modules={[EffectFade, Virtual, Navigation, Pagination]}
 				navigation={{
@@ -30,6 +34,7 @@ const MainSlider: FC = () => {
 				fadeEffect={{
 					crossFade: true,
 				}}
+				// autoHeight
 				effect='fade'
 				speed={300}
 				virtual
@@ -56,10 +61,6 @@ const MainSlider: FC = () => {
 						/>
 					</SwiperSlide>
 				))}
-				<div className={styles.controls}>
-					<MainSliderFraction />
-					<MainSliderButtons />
-				</div>
 			</Swiper>
 		</div>
 	)
