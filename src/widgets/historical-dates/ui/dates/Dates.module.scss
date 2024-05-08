@@ -10,4 +10,16 @@
 	font-size: 200px;
 	line-height: 160px;
 	letter-spacing: -0.02em;
+
+	> span {
+		display: inline-block;
+
+		&:first-child {
+			color: #5d5fef;
+		}
+
+		&:last-child {
+			color: #ef5da8;
+		}
+	}
 }
