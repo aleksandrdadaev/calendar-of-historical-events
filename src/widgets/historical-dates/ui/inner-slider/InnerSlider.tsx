@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { IHistoricalEvent } from '@/shared/model/types/historical-events.type'
 
+import { sortDatesByYear } from '../../lib/utils/sort-dates-by-year.util'
 import Slide from '../slide/Slide'
 
 import styles from './InnerSlider.module.scss'
@@ -33,7 +34,7 @@ const InnerSlider: FC<{ events: IHistoricalEvent[]; active: boolean }> = ({
 				}}
 				className={styles.slider}
 			>
-				{events.map(event => (
+				{sortDatesByYear(events).map(event => (
 					<SwiperSlide key={event.text} className={styles.slide}>
 						<Slide slide={event} />
 					</SwiperSlide>

@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { dates } from '@/shared/config/historical-dates.config'
 
 import { addZeroToNumber } from '../../lib/utils/add-zero-to-number.util'
+import Dates from '../dates/Dates'
 import InnerSlider from '../inner-slider/InnerSlider'
 
 import styles from './MainSlider.module.scss'
@@ -21,6 +22,7 @@ const MainSlider: FC = () => {
 
 	return (
 		<div className={styles.wrapper}>
+			<Dates activeIndex={activeSlideIndex} />
 			<div className={styles.controls}>
 				<MainSliderFraction />
 				<MainSliderButtons />
@@ -34,7 +36,6 @@ const MainSlider: FC = () => {
 				fadeEffect={{
 					crossFade: true,
 				}}
-				// autoHeight
 				effect='fade'
 				speed={300}
 				virtual
