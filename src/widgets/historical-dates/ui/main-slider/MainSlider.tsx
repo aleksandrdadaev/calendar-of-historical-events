@@ -2,18 +2,19 @@ import { FC, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
-import 'swiper/css/pagination'
+// import 'swiper/css/pagination'
 import 'swiper/css/virtual'
 import { EffectFade, Navigation, Pagination, Virtual } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { dates } from '@/shared/config/historical-dates.config'
 
-import { addZeroToNumber } from '../../lib/utils/add-zero-to-number.util'
 import Dates from '../dates/Dates'
 import InnerSlider from '../inner-slider/InnerSlider'
 
 import styles from './MainSlider.module.scss'
+import MainSliderBullets from './main-slider-bullets/MainSliderBullets'
+import stylesBullets from './main-slider-bullets/MainSliderBullets.module.scss'
 import MainSliderButtons from './main-slider-buttons/MainSliderButtons'
 import MainSliderFraction from './main-slider-fraction/MainSliderFraction'
 
@@ -23,6 +24,7 @@ const MainSlider: FC = () => {
 	return (
 		<div className={styles.wrapper}>
 			<Dates activeIndex={activeSlideIndex} />
+			<MainSliderBullets />
 			<div className={styles.controls}>
 				<MainSliderFraction active={activeSlideIndex} length={dates.length} />
 				<MainSliderButtons />
@@ -40,10 +42,16 @@ const MainSlider: FC = () => {
 				speed={300}
 				virtual
 				pagination={{
-					type: 'custom',
-					renderCustom: (swiper, current, total) =>
-						`${addZeroToNumber(current)}/${addZeroToNumber(total)}`,
-					el: '.main-slider-fraction',
+					clickable: true,
+					type: 'bullets',
+					el: `.${stylesBullets.wrapper}`,
+					renderBullet: (index, className) =>
+						`<button class="${className}">
+						<span class="${stylesBullets.circle}"></span>
+						<span class="${stylesBullets.number}">${index + 1}</span>
+					</button>`,
+					bulletClass: stylesBullets.bullet,
+					bulletActiveClass: stylesBullets.bulletActive,
 				}}
 				className={styles.slider}
 				allowTouchMove={false}
