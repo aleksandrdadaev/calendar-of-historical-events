@@ -24,7 +24,7 @@ const MainSlider: FC = () => {
 		<div className={styles.wrapper}>
 			<Dates activeIndex={activeSlideIndex} />
 			<div className={styles.controls}>
-				<MainSliderFraction />
+				<MainSliderFraction active={activeSlideIndex} length={dates.length} />
 				<MainSliderButtons />
 			</div>
 			<Swiper
