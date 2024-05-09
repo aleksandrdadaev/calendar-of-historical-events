@@ -1,0 +1,12 @@
+.line {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 50%;
+
+	transform: translateX(-50%);
+
+	height: 100%;
+	width: 1px;
+	background-color: rgba(#42567a, 0.1);
+}
