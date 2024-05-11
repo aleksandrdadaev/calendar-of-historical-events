@@ -1,21 +1,18 @@
 import clsx from 'clsx'
 import { FC } from 'react'
 import 'swiper/css'
+import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { IHistoricalEvent } from '@/shared/model/types/historical-events.type'
-
 import { sortDatesByYear } from '../../lib/utils/sort-dates-by-year.util'
-import Slide from '../slide/Slide'
+import { IInternalSliderProps } from '../../model/types/internal-slider-props.type'
+import EventSlide from '../event-slide/EventSlide'
 
-import styles from './InnerSlider.module.scss'
-import InnerSliderButtons from './inner-slider-buttons/InnerSliderButtons'
+import styles from './InternalSlider.module.scss'
+import Buttons from './buttons/Buttons'
 
-const InnerSlider: FC<{ events: IHistoricalEvent[]; active: boolean }> = ({
-	events,
-	active,
-}) => {
+const InternalSlider: FC<IInternalSliderProps> = ({ active, events }) => {
 	return (
 		<div
 			className={clsx(styles.wrapper, {
@@ -29,20 +26,20 @@ const InnerSlider: FC<{ events: IHistoricalEvent[]; active: boolean }> = ({
 				spaceBetween={80}
 				grabCursor
 				navigation={{
-					prevEl: `.inner-button-prev`,
-					nextEl: `.inner-button-next`,
+					prevEl: '.internal-slider-prev',
+					nextEl: '.internal-slider-next',
 				}}
 				className={styles.slider}
 			>
 				{sortDatesByYear(events).map(event => (
 					<SwiperSlide key={event.text} className={styles.slide}>
-						<Slide slide={event} />
+						<EventSlide event={event} />
 					</SwiperSlide>
 				))}
-				<InnerSliderButtons />
+				<Buttons />
 			</Swiper>
 		</div>
 	)
 }
 
-export default InnerSlider
+export default InternalSlider

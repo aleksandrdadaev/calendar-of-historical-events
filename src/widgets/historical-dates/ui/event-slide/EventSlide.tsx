@@ -2,9 +2,11 @@ import { FC } from 'react'
 
 import { IHistoricalEvent } from '@/shared/model/types/historical-events.type'
 
-import styles from './Slide.module.scss'
+import styles from './EventSlide.module.scss'
 
-const Slide: FC<{ slide: IHistoricalEvent }> = ({ slide: { text, year } }) => {
+const EventSlide: FC<{ event: IHistoricalEvent }> = ({
+	event: { text, year },
+}) => {
 	return (
 		<div className={styles.wrapper}>
 			<span className={styles.year}>{year}</span>
@@ -13,4 +15,4 @@ const Slide: FC<{ slide: IHistoricalEvent }> = ({ slide: { text, year } }) => {
 	)
 }
 
-export default Slide
+export default EventSlide

@@ -3,19 +3,19 @@ import { FC } from 'react'
 
 import arrow from '@/shared/assets/icons/arrow.svg'
 
-import styles from './MainSliderButtons.module.scss'
+import styles from './SliderNavigation.module.scss'
 
-const MainSliderButtons: FC = () => {
+const SliderNavigation: FC = () => {
 	return (
 		<div className={styles.wrapper}>
-			<button className={clsx(styles.button, 'main-button-prev', styles.prev)}>
+			<button className={clsx(styles.button, styles.prev, 'main-slider-prev')}>
 				<img src={arrow} alt='' className={styles.arrow} />
 			</button>
-			<button className={clsx(styles.button, 'main-button-next', styles.next)}>
+			<button className={clsx(styles.button, styles.next, 'main-slider-next')}>
 				<img src={arrow} alt='' className={styles.arrow} />
 			</button>
 		</div>
 	)
 }
 
-export default MainSliderButtons
+export default SliderNavigation

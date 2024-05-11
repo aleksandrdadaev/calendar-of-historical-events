@@ -1,6 +1,6 @@
 import { IHistoricalEvent } from './historical-events.type'
 
 export interface IHistoricalDatesBlock {
-	title?: string
+	title: string
 	events: IHistoricalEvent[]
 }

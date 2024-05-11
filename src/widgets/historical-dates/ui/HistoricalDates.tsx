@@ -1,16 +1,25 @@
 import { FC } from 'react'
 
-import styles from './HistoricalDates.module.scss'
-import MainSlider from './main-slider/MainSlider'
-import Title from './title/Title'
-import VerticalLine from './vertical-line/VerticalLine'
+import { HistoricalDatesContent } from '@/shared/lib/utils/historical-dates-context.util'
+import { IHistoricalDatesBlock } from '@/shared/model/types/historical-dates.type'
 
-export const HistoricalDates: FC = () => {
+import styles from './HistoricalDates.module.scss'
+import Content from './content/Content'
+import VerticalLine from './lines/vertical-line/VerticalLine'
+import Title from './title/Title'
+
+export const HistoricalDates: FC<{ datesBlocks: IHistoricalDatesBlock[] }> = ({
+	datesBlocks,
+}) => {
 	return (
 		<section className={styles.wrapper}>
 			<VerticalLine />
 			<Title />
-			<MainSlider />
+			<HistoricalDatesContent.Provider value={datesBlocks}>
+				<Content />
+			</HistoricalDatesContent.Provider>
+
+			{/* <MainSlider /> */}
 		</section>
 	)
 }

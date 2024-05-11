@@ -1,0 +1,22 @@
+.wrapper {
+	position: static;
+	width: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 50px;
+}
+
+.slider {
+	align-items: end;
+}
+
+.navigation {
+	padding: 0 80px;
+}
+
+.controls {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}

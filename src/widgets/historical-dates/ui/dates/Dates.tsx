@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 
-import { dates } from '@/shared/config/historical-dates.config'
+import { HistoricalDatesContent } from '@/shared/lib/utils/historical-dates-context.util'
 
 import { sortDatesByYear } from '../../lib/utils/sort-dates-by-year.util'
 
@@ -8,6 +8,7 @@ import styles from './Dates.module.scss'
 import Number from './number/Number'
 
 const Dates: FC<{ activeIndex: number }> = ({ activeIndex }) => {
+	const dates = useContext(HistoricalDatesContent)
 	const sortArray = sortDatesByYear(dates[activeIndex].events)
 	return (
 		<div className={styles.wrapper}>
