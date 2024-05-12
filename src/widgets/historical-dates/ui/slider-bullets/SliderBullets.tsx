@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useState } from 'react'
+import { FC, useContext } from 'react'
 
 import { HistoricalDatesContent } from '@/shared/lib/utils/historical-dates-context.util'
 
