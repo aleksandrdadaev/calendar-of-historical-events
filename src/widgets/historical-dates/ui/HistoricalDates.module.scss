@@ -13,3 +13,16 @@
 	flex-direction: column;
 	gap: 170px;
 }
+
+@media (max-width: 1439px) {
+	.wrapper {
+		width: 100%;
+		min-height: auto;
+
+		padding-top: 50px;
+		padding-bottom: 15px;
+		border: none;
+
+		gap: 50px;
+	}
+}

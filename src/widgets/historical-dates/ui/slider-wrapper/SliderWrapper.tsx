@@ -9,6 +9,7 @@ import { HistoricalDatesContent } from '@/shared/lib/utils/historical-dates-cont
 import { addZeroToNumber } from '../../lib/utils/add-zero-to-number.util'
 import { ISliderWrapperProps } from '../../model/types/slider-wrapper-props.type'
 import InternalSlider from '../internal-slider/InternalSlider'
+import MainSlide from '../main-slide/MainSlide'
 import SliderBullets from '../slider-bullets/SliderBullets'
 import SliderFraction from '../slider-fraction/SliderFraction'
 import SliderNavigation from '../slider-navigation/SliderNavigation'
@@ -46,11 +47,8 @@ const SliderWrapper: FC<ISliderWrapperProps> = ({
 			wrapperClass={styles.slider}
 		>
 			{dates.map((datesBlock, index) => (
-				<SwiperSlide key={datesBlock.title} className={styles.slide}>
-					<InternalSlider
-						events={datesBlock.events}
-						active={index === activeIndex}
-					/>
+				<SwiperSlide key={datesBlock.title}>
+					<MainSlide datesBlock={datesBlock} active={index === activeIndex} />
 				</SwiperSlide>
 			))}
 			<div className={styles.navigation}>

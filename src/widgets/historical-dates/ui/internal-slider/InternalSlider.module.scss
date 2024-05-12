@@ -4,9 +4,6 @@
 	padding-right: 80px;
 	padding-left: 80px;
 
-	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
-
 	user-select: none;
 }
 
@@ -18,7 +15,8 @@
 	width: auto !important;
 }
 
-.active {
-	opacity: 1;
-	transition-delay: 1s;
+@media (max-width: 1439px) {
+	.wrapper {
+		padding: 0;
+	}
 }

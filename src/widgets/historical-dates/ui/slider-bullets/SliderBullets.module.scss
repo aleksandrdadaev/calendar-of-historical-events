@@ -20,3 +20,21 @@
 	border-radius: 50%;
 	border: 1px solid rgba(#42567a, 0.2);
 }
+
+@media (max-width: 1439px) {
+	.wrapper {
+		position: static;
+		width: fit-content;
+		height: fit-content;
+
+		transform: none !important;
+		transition: none;
+
+		display: flex;
+		gap: 10px;
+	}
+
+	.circle {
+		display: none;
+	}
+}

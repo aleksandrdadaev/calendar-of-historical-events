@@ -15,11 +15,21 @@
 		display: inline-block;
 
 		&:first-child {
-			color: #5d5fef;
+			color: #3877ee;
 		}
 
 		&:last-child {
 			color: #ef5da8;
 		}
+	}
+}
+
+@media (max-width: 1439px) {
+	.wrapper {
+		position: static;
+		transform: none;
+
+		font-size: 56px;
+		line-height: 73px;
 	}
 }

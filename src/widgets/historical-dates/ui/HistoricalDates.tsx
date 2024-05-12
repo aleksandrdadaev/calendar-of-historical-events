@@ -18,8 +18,6 @@ export const HistoricalDates: FC<{ datesBlocks: IHistoricalDatesBlock[] }> = ({
 			<HistoricalDatesContent.Provider value={datesBlocks}>
 				<Content />
 			</HistoricalDatesContent.Provider>
-
-			{/* <MainSlider /> */}
 		</section>
 	)
 }

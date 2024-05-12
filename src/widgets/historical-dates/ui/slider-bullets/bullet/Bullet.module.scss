@@ -1,6 +1,5 @@
 .wrapper {
 	position: absolute;
-	width: fit-content;
 
 	width: 56px;
 	height: 56px;
@@ -70,4 +69,31 @@
 
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out;
+}
+
+@media (max-width: 1439px) {
+	.wrapper {
+		position: static;
+
+		width: 6px;
+		height: 6px;
+
+		transform: none !important;
+
+		background-color: #42567a;
+		border-radius: 50%;
+		opacity: 0.4;
+		transition: opacity 0.3s ease-in-out;
+
+		&:disabled,
+		&:not(:disabled):hover {
+			opacity: 1;
+		}
+	}
+
+	.circle,
+	.number,
+	.title {
+		display: none;
+	}
 }

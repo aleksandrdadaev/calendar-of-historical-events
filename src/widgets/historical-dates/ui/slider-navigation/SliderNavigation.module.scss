@@ -34,3 +34,20 @@
 
 	transform: translate(-50%, -50%);
 }
+
+@media (max-width: 1439px) {
+	.wrapper {
+		gap: 10px;
+	}
+
+	.button {
+		width: 25px;
+		height: 25px;
+	}
+
+	.arrow {
+		width: 10px;
+		height: 8px;
+		object-fit: cover;
+	}
+}
